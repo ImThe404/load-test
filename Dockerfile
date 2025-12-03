@@ -1,6 +1,9 @@
-FROM python:3.9-slim
+FROM python:2.7
 
-# Install locust
+# Met à jour pip compatible Python 2
+RUN pip install --upgrade pip==19.3.1
+
+# Installe Locust et dépendances
 RUN pip install pyzmq locustio faker
 
 ADD locustfile.py /config/locustfile.py
